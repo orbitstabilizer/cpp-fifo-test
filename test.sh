@@ -1,0 +1,4 @@
+
+make all
+./writer &
+./reader 

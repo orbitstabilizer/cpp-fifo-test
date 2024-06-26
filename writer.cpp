@@ -6,6 +6,7 @@
 #include <chrono>
 #include <sys/stat.h>
 #include <cstring>
+#include <algorithm>
 
 struct Message {
     int data[100];
@@ -21,9 +22,7 @@ int main() {
 
     const int num_messages = 1000000;
     Message message;
-    for (int i = 0; i < 100; ++i) {
-        message.data[i] = 31;
-    }
+    std::fill(message.data, message.data + 100, 31);
 
     for (int i = 0; i < num_messages; ++i) {
         message.timestamp = std::chrono::high_resolution_clock::now();

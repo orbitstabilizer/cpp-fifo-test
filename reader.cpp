@@ -19,6 +19,7 @@ int main() {
 
     const int num_messages = 1000000;
     Message message;
+    std::cout<< "sizeof(message): " << sizeof(message) << std::endl;
     std::chrono::duration<double, std::micro> latency(0);
 
     for (int i = 0; i < num_messages; ++i) {
